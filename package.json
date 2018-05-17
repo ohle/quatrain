@@ -1,0 +1,25 @@
+{
+  "name": "watchface",
+  "author": "Ohle Claussen <joclaussen@gmail.com>",
+  "version": "0.0.1",
+  "keywords": ["pebble-app"],
+  "private": true,
+  "dependencies": {},
+  "pebble": {
+    "main": {
+      "rockyjs": "src/rocky/index.js",
+      "pkjs": "src/pkjs/index.js"
+    },
+    "displayName": "watchface",
+    "uuid": "7c255c97-5cb8-4b9d-b6e4-62c2baefcc13",
+    "projectType": "rocky",
+    "sdkVersion": "3",
+    "enableMultiJS": true,
+    "watchapp": {
+      "watchface": true
+    },
+    "resources": {
+      "media": []
+    }
+  }
+}
