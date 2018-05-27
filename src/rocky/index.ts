@@ -1,0 +1,2 @@
+import rocky = require('rocky')
+
