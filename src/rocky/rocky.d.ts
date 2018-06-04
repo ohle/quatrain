@@ -4,8 +4,6 @@ declare module "rocky" {
         "daychange" | "memorypressure" | "message" | "postemessageconnected" | 
         "postmessagedisconnected" | "postmessageerror";
 
-    export type Callback = any; // TODO
-
     /**
      * Provides information about the currently connected Pebble smartwatch.
      */
