@@ -28,8 +28,34 @@ declare module "rocky" {
         contentSize : "small" | "medium" | "large" | "x-large";
     }
 
+    /**
+     * Sends a message to the mobile companion component. Please be aware that
+     * messages should be kept concise. Each message is queued, so postMessage()
+     * can be called multiple times immediately. If there is a momentary loss of
+     * connectivity, queued messages may still be delivered, or automatically
+     * removed from the queue after a few seconds of failed connectivity. Any
+     * transmission failures, or out of memory errors will be raised via the
+     * postmessageerror event.
+     *
+     * rocky.postMessage({cmd: 'fetch'});
+     * @param data
+     *     An object containing the data to deliver to the mobile device. This
+     *     will be received in the data field of the event delivered to the
+     *     on('message', ...) handler.
+     *
+     */
     export function postMessage(data : Object);
 
+    /**
+     * Flags the canvas (display) as requiring a redraw. Invoking this method
+     * will cause the draw event to be emitted. Only 1 draw event will occur,
+     * regardless of how many times the redraw is requested before the next draw
+     * event.
+     *
+     * rocky.on('secondchange', function(e) {
+     *   rocky.requestDraw();
+     *   });
+     */
     export function requestDraw();
 
     export var watchInfo : WatchInfo;
