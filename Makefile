@@ -14,3 +14,9 @@ src/rocky/index.js: ${ROCKY_SOURCES}
 
 src/pkjs/index.js: ${PKJS_SOURCES}
 	tsc
+
+.PHONY: clean
+clean:
+	rm $(wildcard src/rocky/*.js)
+	rm $(wildcard src/pkjs/*.js)
+	rm -rf build/
