@@ -2,3 +2,4 @@ build/
 package-lock.json
 src/rocky/*.js
 src/pkjs/*.js
+.lock-waf*
