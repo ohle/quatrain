@@ -9,7 +9,6 @@ export default class DigitalTime implements Complication {
     textDimension : geom.Dimension;
 
     constructor(font : Font, color : string) {
-        this.location = new geom.Point(0, 0);
         this.font = font;
         this.color = color;
     }
