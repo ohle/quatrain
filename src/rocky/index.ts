@@ -2,9 +2,13 @@ import rocky = require('rocky')
 import geom = require('./geometry')
 import Complication from './watchface';
 import DigitalTime from './digital-time';
+import TodaysDate from './date';
+import FontDemo from './fontdemo';
 
 var complications: Complication[] = [
-    new DigitalTime("26px bold Leco-numbers-am-pm", "white")
+    new DigitalTime("32px bold numbers Leco-numbers", "white"),
+    new TodaysDate("#aaa"),
+    // new FontDemo()
 ];
 
 var initialized = false;
