@@ -5,6 +5,10 @@ export class Point {
     }
     x : number;
     y : number;
+
+    toString() {
+        return "(" + this.x + ", " + this.y + ")";
+    }
 }
 
 export class Dimension {
@@ -14,4 +18,8 @@ export class Dimension {
     }
     width : number;
     height : number;
+
+    toString() {
+        return this.width + "×" + this.height;
+    }
 }
