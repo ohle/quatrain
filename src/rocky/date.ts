@@ -6,7 +6,7 @@ export default class TodaysDate implements Complication {
 
     readonly color : string;
 
-    private dow = [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ];
+    private dow = [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat",  ];
 
     private mon = [ 
         "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" 
