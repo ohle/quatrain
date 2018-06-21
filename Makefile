@@ -7,7 +7,9 @@ else
 	PHONE_ARG=--phone 192.168.0.10
 endif
 
-TSC_OPTIONS=--module commonjs --moduleResolution Classic
+TSC_OPTIONS=--module commonjs --moduleResolution Classic --target es5 --lib ES2015.Promise,DOM,ES5
+
+.PHONY: build
 build: build/watchface.pbw
 
 .PHONY: simulate

@@ -2,9 +2,14 @@
   "name": "watchface",
   "author": "Ohle Claussen <joclaussen@gmail.com>",
   "version": "0.0.0",
-  "keywords": ["pebble-app"],
+  "keywords": [
+    "pebble-app"
+  ],
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "@types/es6-promise": "^3.3.0",
+    "es6-promise": "^4.2.4"
+  },
   "pebble": {
     "main": {
       "rockyjs": "src/rocky/index.js",
@@ -20,6 +25,9 @@
     },
     "resources": {
       "media": []
-    }
+    },
+    "capabilities": [
+      "location"
+    ]
   }
 }

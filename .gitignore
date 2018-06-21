@@ -3,3 +3,4 @@ package-lock.json
 src/rocky/*.js
 src/pkjs/*.js
 .lock-waf*
+src/pkjs/secrets.ts

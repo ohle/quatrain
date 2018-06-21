@@ -1,6 +1,8 @@
 {
     "compilerOptions": {
+        "target": "es5",
         "module": "commonjs",
-        "moduleResolution": "Classic"
+        "moduleResolution": "Classic",
+        "lib": [ "es2015.promise", "dom", "es2015" ]
     }
 }
