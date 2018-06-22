@@ -1,7 +1,7 @@
 import geom = require('./geometry');
 import Complication from './watchface';
 
-export default class TodaysDate implements Complication {
+export default class TodaysDate implements Complication<void> {
     private location : geom.Point;
 
     readonly color : string;

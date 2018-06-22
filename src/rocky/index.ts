@@ -5,7 +5,7 @@ import DigitalTime from './digital-time';
 import TodaysDate from './date';
 import FontDemo from './fontdemo';
 
-var complications: Complication[] = [
+var complications: Complication<any>[] = [
     new DigitalTime("32px bold numbers Leco-numbers", "white"),
     new TodaysDate("#aaa"),
     // new FontDemo()

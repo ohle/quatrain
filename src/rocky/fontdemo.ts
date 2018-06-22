@@ -28,7 +28,7 @@ var fonts : Font[] = [
     "28px light numbers Leco-numbers"
 ];
 
-export default class FontDemo implements Complication {
+export default class FontDemo implements Complication<void> {
     init (dim: geom.Dimension) {
         rocky.on("secondchange", (e) => { rocky.requestDraw() });
     }

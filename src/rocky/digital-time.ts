@@ -1,7 +1,7 @@
 import geom = require('./geometry');
 import Complication from './watchface';
 
-export default class DigitalTime implements Complication {
+export default class DigitalTime implements Complication<void> {
     location : geom.Point;
     font : Font;
     color : string;
