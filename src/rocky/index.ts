@@ -7,7 +7,7 @@ import FontDemo from './fontdemo';
 import { Weather, WeatherData } from './weather';
 
 var complications: Complication<any>[] = [
-    new DigitalTime("32px bold numbers Leco-numbers", "white"),
+    new DigitalTime("26px bold Leco-numbers-am-pm", "white"),
     new TodaysDate("#aaa"),
     new Weather("#aaa"),
     // new FontDemo()
