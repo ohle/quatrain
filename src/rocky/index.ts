@@ -4,10 +4,12 @@ import Complication from './watchface';
 import DigitalTime from './digital-time';
 import TodaysDate from './date';
 import FontDemo from './fontdemo';
+import { Weather, WeatherData } from './weather';
 
 var complications: Complication<any>[] = [
     new DigitalTime("32px bold numbers Leco-numbers", "white"),
     new TodaysDate("#aaa"),
+    new Weather("#aaa"),
     // new FontDemo()
 ];
 
@@ -25,7 +27,7 @@ rocky.on("draw", (evt : rocky.DrawEvent) => {
     initialize(ctx);
     for (let complication of complications) {
         ctx.save();
-        complication.draw(ctx);
+        complication.draw(ctx, {currentTemp: 20, maxTemp: 30.0, minTemp: -10});
         ctx.restore();
     }
 });
