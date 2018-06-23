@@ -18,6 +18,8 @@ export class Weather implements Complication<WeatherData> {
     private largeFont : Font = "28px bold Gothic";
     private smallFont : Font = "14px Gothic";
 
+    phoneMessageKey = "weather";
+
     constructor(color : string) {
         this.color = color;
     }
@@ -47,3 +49,4 @@ export class Weather implements Complication<WeatherData> {
         return temp.toFixed(0) + "°";
     }
 }
+
