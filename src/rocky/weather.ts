@@ -24,8 +24,8 @@ export class Weather implements Complication<WeatherData> {
 
     init(dim: geom.Dimension) {
         this.location = new geom.Point(
-            dim.width - 20,
-            dim.height - 50
+            dim.width - 10,
+            dim.height - 65
         );
     }
 

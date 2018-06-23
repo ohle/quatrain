@@ -46,7 +46,6 @@ function forecast() {
     });
 }
 
-console.trace("Calling forecast");
-forecast().then( (res) => { 
-    console.log(JSON.stringify(JSON.parse(res), null, 2));
-});
+// forecast().then( (res) => { 
+//     console.log(JSON.stringify(JSON.parse(res), null, 2));
+// });

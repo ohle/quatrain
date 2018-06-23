@@ -18,8 +18,8 @@ export default class TodaysDate implements Complication<void> {
 
     init(dim : geom.Dimension) {
         this.location = new geom.Point(
-            20,
-            dim.height - 50
+            10,
+            dim.height - 65
         );
     }
 
