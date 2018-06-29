@@ -46,6 +46,52 @@ function forecast() {
     });
 }
 
-// forecast().then( (res) => { 
-//     console.log(JSON.stringify(JSON.parse(res), null, 2));
-// });
+var activeKeys : string[] = [];
+
+Pebble.on("message", (e : PostMessageEvent) => {
+    if (e.data.activeKeys) {
+        activeKeys = e.data.activeKeys;
+        console.log("active keys set to ", activeKeys);
+    }
+});
+
+function sendData() {
+}
+
+sendData();
+setInterval(sendData, 1000 * 60 * 15);
+
+class Query {
+    private lastResult : any = null;
+    private sent = false;
+
+    private readonly query : () => Promise<any>;
+
+    constructor(query : () => Promise<any>) {
+        this.query = query;
+    }
+
+    refresh() {
+        this.query().then( (result: any) => {
+            if (JSON.stringify(result) !== JSON.stringify(this.lastResult)) {
+                this.lastResult = result;
+                this.sent = false;
+            }
+        });
+    }
+
+    send() {
+        if (this.sent) return null;
+        return this.lastResult;
+    }
+}
+
+interface Weather {
+    currentTemp : number;
+    maxTemp : number;
+    minTemp : number'
+}
+
+// var queries : {
+//     'weather' : forecast().
+// }

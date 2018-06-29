@@ -3,7 +3,7 @@ type EventType = "ready" | "appmessage" | "showConfiguration" |
     "postmessagedisconnected" | "postmessageerror";
 
 interface PostMessageEvent extends Event {
-    data : Object;
+    data : any;
 }
 
 interface IPebble {

@@ -15,6 +15,8 @@ var complications: Complication<any>[] = [
     // new FontDemo()
 ];
 
+var activeKeys = complications.filter(c => c.phoneMessageKey).map(c => c.phoneMessageKey);
+
 var initialized = false;
 
 var initialize = (ctx : RockyCanvasRenderingContext2D) => {
@@ -43,3 +45,5 @@ rocky.on("draw", (evt : rocky.DrawEvent) => {
 rocky.on("minutechange", (evt : rocky.TickEvent) => {
     rocky.requestDraw();
 });
+
+rocky.postMessage({'activeKeys': activeKeys});
