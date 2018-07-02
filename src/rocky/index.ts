@@ -26,10 +26,7 @@ var initialize = (ctx : RockyCanvasRenderingContext2D) => {
     initialized = true;
 }
 
-var testData = {
-    weather: {currentTemp: 20, maxTemp: 30.0, minTemp: -10},
-    weatherDescription : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-};
+var currentData : { [key : string] : any; } = {};
 
 rocky.on("draw", (evt : rocky.DrawEvent) => {
     var ctx = evt.context;
@@ -37,8 +34,10 @@ rocky.on("draw", (evt : rocky.DrawEvent) => {
     initialize(ctx);
     for (let complication of complications) {
         ctx.save();
-        let data = complication.phoneMessageKey ? testData[complication.phoneMessageKey] : undefined;
-        complication.draw(ctx, data);
+        let data = complication.phoneMessageKey ? currentData[complication.phoneMessageKey] : undefined;
+        if (data || !complication.phoneMessageKey) {
+            complication.draw(ctx, data);
+        }
         ctx.restore();
     }
 });
@@ -48,3 +47,15 @@ rocky.on("minutechange", (evt : rocky.TickEvent) => {
 });
 
 rocky.postMessage({'activeKeys': activeKeys});
+
+rocky.on("message", (evt : MessageEvent) => {
+    let data: { [id: string] : any; } = evt.data;
+    let needsRefresh = false;
+    Object.keys(data).forEach( (key) => {
+        currentData[key] = data[key];
+        needsRefresh = true;
+    });
+    if (needsRefresh) {
+        rocky.requestDraw();
+    }
+});
