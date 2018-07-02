@@ -9,6 +9,7 @@ import WeatherDescription from "./weather-description";
 
 var complications: Complication<any>[] = [
     new DigitalTime("26px bold Leco-numbers-am-pm", "white"),
+    // new DigitalTime("49px Roboto-subset", "white"),
     new TodaysDate("#aaa"),
     new Weather("#aaa"),
     new WeatherDescription("#aaa"),
